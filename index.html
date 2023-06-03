@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Form</title>
+    <style>
+      body {
+        background-image: url(/helpcenter.png);
+      }
+      #outer-container {
+        margin-left: 350px;
+        padding: 20px;
+        margin-right: 450px;
+        /* text-align: center; /
+        border: 2px solid black;
+        border-radius: 20px;
+        margin-top: 50px;
+        / padding-bottom: 150px; */
+      }
+      .width-box {
+        line-height: 20px;
+      }
+      .form_details {
+        margin: 10px;
+      }
+      #Head-text {
+        text-align: center;
+      }
+      .submit-Button {
+        margin-left: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="outer-container">
+      <div id="Head-text">
+        <h1>Book A Call</h1>
+        <h5>
+          Book a call slot and our Representative will call you with the time
+          you selected
+        </h5>
+      </div>
+      <hr />
+<form action="#" onsubmit="registerUser()">
+        <div class="form_details">
+          <label for="name">Name :</label><br />
+          <input
+            class="width-box"
+            type="text"
+            name="Name"
+            
+            id="name"
+            placeholder="Enter your Name"
+            size="65"
+            required
+            style="margin-top: 5px"
+          />
+        </div>
+        <div class="form_details">
+          <label for="emial">Email :</label><br />
+          <input
+            class="width-box"
+            type="email"
+            name="Email"
+            id="email"
+            placeholder="Enter your Email-Id"
+            size="65"
+            required;
+            style="margin-top: 5px"
+          />
+        </div>
+        <div class="form_details">
+          <label for="phone">Phone :</label><br />
+          <input
+            class="width-box"
+            type="phone"
+            name="=Phone"
+            id="phone"
+            size="65"
+            placeholder="Enter Valid Number"
+            required
+            style="margin-top: 5px"
+            ;
+          />
+        </div>
+        <div class="form_details">
+          <label for="date">Time for call :</label><br />
+          <input
+            class="width-box"
+            type="date"
+            id="date"
+            name="time for call"
+            style="margin-top: 5px"
+            ;
+            id="date"
+            required
+          />
+          <input
+            class="width-box"
+            type="time"
+            itemid="time"
+            name="time for call"
+            style="margin-top: 5px"
+            ;
+            id="data"
+            required
+          />
+        </div>
+        <input
+          type="submit"
+          name="submit"
+          id="submit"
+          class="submit-Button"
+          value="Get a Call"
+        />
+      </form>
+    </div>
+    <script>
+        function registerUser(event) {
+             event.preventDefault()
+          const name = document.getElementById("name").value;
+          console.log(name);
+          const email = document.getElementById("email").value;
+          console.log(email);
+          const phoneNumber = document.getElementById("phone").value;
+          console.log(phoneNumber);
+          const Date = document.getElementById("date").value;
+          console.log(Date);
+          const Time = document.getElementById("time").value;
+          console.log(Time);
+        }
+      </script> 
+ 
+ 
