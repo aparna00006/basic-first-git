@@ -17,21 +17,24 @@ header.style.borderBottom ='2px solid black'
 //GETSELEMENTSBYCLASSNAME//
 let items = document.getElementsByClassName('list-group-item');
 console.log(items);
-console.log(items[1]);
-items[1].textContent = 'hello 2';
+//console.log(items[1]);
+//items[1].textContent = 'hello 2';
+items[0].style.fontWeight = 'bold';
 items[1].style.fontWeight = 'bold';
-items[1].style.backgroundColor = 'yellow';
+items[2].style.backgroundColor = 'green';
+items[2].style.fontWeight = 'bold';
+items[3].style.fontWeight = 'bold';
 
 //gives error
 //items.style.bacground= '#f4f4f4';
-for(let i=0;i<items.length;i++){
-    items[i].style.backgroundColor= '#f4f4f4';
-}
-let item = document.getElementsByClassName('title');
-console.log(item);
+//for(let i=0;i<items.length;i++){
+ //   items[i].style.backgroundColor= '#f4f4f4';
+//}
+//let item = document.getElementsByClassName('title');
+//console.log(item);
 //for(let i=0;i<item.length;i++){
    // item[i].style.fontWeight = 'bold';
    // item[i].style.color = 'green';
 //}
-item[0].style.fontWeight='bold';
-item[0].style.color='green';
+//item[0].style.fontWeight='bold';
+//item[0].style.color='green';
