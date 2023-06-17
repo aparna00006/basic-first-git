@@ -25,6 +25,10 @@ items[2].style.backgroundColor = 'green';
 items[2].style.fontWeight = 'bold';
 items[3].style.fontWeight = 'bold';
 
+//for(let i=0;i<items.length;i++){
+   //items[i].style.backgroundColor ='#f4f4f4;'
+//}
+
 //gives error
 //items.style.bacground= '#f4f4f4';
 //for(let i=0;i<items.length;i++){
@@ -38,3 +42,17 @@ items[3].style.fontWeight = 'bold';
 //}
 //item[0].style.fontWeight='bold';
 //item[0].style.color='green';
+
+let li= document.getElementsByTagName('li');
+console.log(li);
+li[0].style.fontWeight = 'bold'
+li[1].style.fontWeight = 'bold';
+li[2].style.backgroundColor = 'green';
+li[2].style.fontWeight = 'bold';
+li[3].style.fontWeight = 'bold';
+li[4].style.fontWeight = 'bold'
+
+
+//QUERYSELECTOR//
+//let item = document.querySelector('.list-group-item');
+//item.style.color = 'red';
