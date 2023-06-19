@@ -15,15 +15,15 @@
 let header = document.getElementById('main-header');
 header.style.borderBottom ='2px solid black'
 //GETSELEMENTSBYCLASSNAME//
-let items = document.getElementsByClassName('list-group-item');
-console.log(items);
+//let items = document.getElementsByClassName('list-group-item');
+//console.log(items);
 //console.log(items[1]);
 //items[1].textContent = 'hello 2';
-items[0].style.fontWeight = 'bold';
-items[1].style.fontWeight = 'bold';
-items[2].style.backgroundColor = 'green';
-items[2].style.fontWeight = 'bold';
-items[3].style.fontWeight = 'bold';
+//items[0].style.fontWeight = 'bold';
+//items[1].style.fontWeight = 'bold';
+//items[2].style.backgroundColor = 'green';
+//items[2].style.fontWeight = 'bold';
+//items[3].style.fontWeight = 'bold';
 
 //for(let i=0;i<items.length;i++){
    //items[i].style.backgroundColor ='#f4f4f4;'
@@ -43,16 +43,28 @@ items[3].style.fontWeight = 'bold';
 //item[0].style.fontWeight='bold';
 //item[0].style.color='green';
 
-let li= document.getElementsByTagName('li');
-console.log(li);
-li[0].style.fontWeight = 'bold'
-li[1].style.fontWeight = 'bold';
-li[2].style.backgroundColor = 'green';
-li[2].style.fontWeight = 'bold';
-li[3].style.fontWeight = 'bold';
-li[4].style.fontWeight = 'bold'
-
+//let li= document.getElementsByTagName('li');
+//console.log(li);
+//li[0].style.fontWeight = 'bold'
+//li[1].style.fontWeight = 'bold';
+//li[2].style.backgroundColor = 'green';
+//li[2].style.fontWeight = 'bold';
+//li[3].style.fontWeight = 'bold';
+//li[4].style.fontWeight = 'bold';
 
 //QUERYSELECTOR//
 //let item = document.querySelector('.list-group-item');
-//item.style.color = 'red';
+//item.style.backgroundColor = 'green';
+
+let secondItem = document.querySelector('.list-group-item:nth-child(2)');
+secondItem.style.backgroundColor = 'green';
+
+let thirditem = document.querySelector('.list-group-item:nth-child(3)');
+thirditem.style.color = 'white';
+
+//AllQUERYSELECTOR//
+//let li = document.querySelectorAll('li');
+//console.log(li);
+//console.log(li[1]);
+//li[1].style.color = 'green';
+//li[1].style.fontColor = 'red';
