@@ -173,6 +173,7 @@ let filter = document.getElementById('filter');
 
    //Get input value
    let newItem = document.getElementById('item').value;
+   let newItem1 = document.getElementById('description').value;
 
  //create new li element
   let li = document.createElement('li');
@@ -180,20 +181,24 @@ let filter = document.getElementById('filter');
   li.className = 'list-group-item';
   // add text node with input value
   li.appendChild(document.createTextNode(newItem));
+  li.appendChild(document.createTextNode(newItem1));
+  //console.log(li);
+
 
   //create del button element
   let deleteBtn = document.createElement('button');
   //create edit button element
   let EditBtn = document.createElement('button')
 
+
   //Add classes to del button
   deleteBtn.className ='btn btn-danger btn-sm float-right delete'
   //add class to edit
-   EditBtn.className = "btn btn-success btn-sm float-right edit"
+   EditBtn.className = "btn btn-success btn-sm float-right EDIT"
 
   //append text node
   deleteBtn.appendChild(document.createTextNode('X'));
-  EditBtn.appendChild(document.createTextNode('Edit'))
+  EditBtn.appendChild(document.createTextNode('EDIT'))
 
   // Append button to li
   li.appendChild(deleteBtn);
@@ -215,18 +220,20 @@ let filter = document.getElementById('filter');
  }
 
 //filter items
-//function filterItems(e){
+ function filterItems(e){
   //convert text to lowerCase
-  //let text = e.target.value.toLowerCase();
+  let text = e.target.value.toLowerCase();
   // get lis
-  //let items = itemlist.getElementsByTagName('li');
-  //convert to an array
- // Array.from(items).forEach(function(item){
-   //let itemName = item.firstChild.textContent;
-   //if(itemName.toLowerCase().indexOf(text) !=-1){
-     // item.style.display = 'block';
- // } else {
-   //item.style.display ='none';
- // }
-//});
-//}
+  let items = itemlist.getElementsByTagName('li');
+ // convert to an array
+  Array.from(items).forEach(function(item){
+   let itemName = item.firstChild.textContent;
+   let description = item.childNodes[1].textContent;
+   if(itemName.toLowerCase().indexOf(text) !=-1 ||
+     description.toLowerCase().indexOf(text)!=-1) {
+    item.style.display = 'block';
+  } else {
+   item.style.display ='none';
+  }
+ });
+ }
