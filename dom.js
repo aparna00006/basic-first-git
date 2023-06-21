@@ -70,7 +70,7 @@
 //li[1].style.fontColor = 'red';
 
 //TRAVERSING THE DOM//
-let itemlist = document.querySelector('#items');
+//let itemlist = document.querySelector('#items');
 // parentNode
 //console.log(itemlist.parentNode);
 //itemlist.parentNode.style.backgroundColor = '#f4f4f4';
@@ -114,49 +114,119 @@ let itemlist = document.querySelector('#items');
 //createElement
 
 //create a div
-let newDiv = document.createElement('div');
+//let newDiv = document.createElement('div');
 
 // Add class
-newDiv.className='hello';
+//newDiv.className='hello';
 
 // add id
-newDiv.id = 'hello1';
+//newDiv.id = 'hello1';
 
 // add atrribute
-newDiv.setAttribute('title','Hello Div');
+//newDiv.setAttribute('title','Hello Div');
 
 // create text node
-let newDivText = document.createTextNode('HEllo word');
+//let newDivText = document.createTextNode('HEllo word');
 
 // add text to div
-newDiv.appendChild(newDivText);
+//newDiv.appendChild(newDivText);
 
-let container = document.querySelector('header .container');
-let h1 = document.querySelector('header h1');
+//let container = document.querySelector('header .container');
+//let h1 = document.querySelector('header h1');
 
-console.log(newDiv);
+//console.log(newDiv);
 
-let newDiv1 = document.createElement('div');
-newDiv1.className="list-group-item";
-newDiv1.id = "hello 1";
-console.log(newDiv1);
+//let newDiv1 = document.createElement('div');
+//newDiv1.className="list-group-item";
+//newDiv1.id = "hello 1";
+//console.log(newDiv1);
 // set attribute
-newDiv1.setAttribute("title","HEllo");
+//newDiv1.setAttribute("title","HEllo");
 
 //createTextNode
-let newDiv1Text = document.createTextNode("HEllo word");
+//let newDiv1Text = document.createTextNode("HEllo word");
 //add text to div (appendchild)
-newDiv1.appendChild(newDiv1Text);
+//newDiv1.appendChild(newDiv1Text);
 
-const uiContainer =document.querySelector("div ul");
-console.log(uiContainer);
-const liCon =document.querySelector("div li");
-console.log(liCon);
-uiContainer.insertBefore(newDiv1,liCon);
+//const uiContainer =document.querySelector("div ul");
+//console.log(uiContainer);
+//const liCon =document.querySelector("div li");
+//console.log(liCon);
+//uiContainer.insertBefore(newDiv1,liCon);
 
-//newDiv.style.fontSize '30px'
+//container.insertBefore(newDiv, h1);
 
-container.insertBefore(newDiv, h1);
+let form = document.getElementById('addForm');
+let itemlist= document.getElementById('items');
+let filter = document.getElementById('filter');
 
+//Form submit event
+ form.addEventListener('submit', addItem);
+ // delete event
+ itemlist.addEventListener('click', removeItem);
+ // filter event
+ filter.addEventListener('keyup',filterItems);
 
+ //Add item
+ function addItem(e){
+   e.preventDefault();
 
+   //Get input value
+   let newItem = document.getElementById('item').value;
+
+ //create new li element
+  let li = document.createElement('li');
+  //Add class
+  li.className = 'list-group-item';
+  // add text node with input value
+  li.appendChild(document.createTextNode(newItem));
+
+  //create del button element
+  let deleteBtn = document.createElement('button');
+  //create edit button element
+  let EditBtn = document.createElement('button')
+
+  //Add classes to del button
+  deleteBtn.className ='btn btn-danger btn-sm float-right delete'
+  //add class to edit
+   EditBtn.className = "btn btn-success btn-sm float-right edit"
+
+  //append text node
+  deleteBtn.appendChild(document.createTextNode('X'));
+  EditBtn.appendChild(document.createTextNode('Edit'))
+
+  // Append button to li
+  li.appendChild(deleteBtn);
+  //append button to li
+  li.appendChild(EditBtn)
+
+  // append li to list
+  itemlist.appendChild(li);
+ }
+
+ // remove item
+ function removeItem(e){
+      if(e.target.classList.contains('delete')){
+         if(confirm('Are You Sure?')){
+            let li = e.target.parentElement;
+            itemlist.removeChild(li);
+         }
+      }
+ }
+
+//filter items
+//function filterItems(e){
+  //convert text to lowerCase
+  //let text = e.target.value.toLowerCase();
+  // get lis
+  //let items = itemlist.getElementsByTagName('li');
+  //convert to an array
+ // Array.from(items).forEach(function(item){
+   //let itemName = item.firstChild.textContent;
+   //if(itemName.toLowerCase().indexOf(text) !=-1){
+     // item.style.display = 'block';
+ // } else {
+   //item.style.display ='none';
+ // }
+//});
+//}
