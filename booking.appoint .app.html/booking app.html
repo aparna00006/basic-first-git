@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Booking App</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header>
+        <h1>Booking Appointment App</h1>
+      </header>
+      <main>
+        <section class="container">
+          <form onsubmit="saveToLocalStorage(event)">
+            <div class="cont">
+              <label for="name">Name</label><br />
+              <input
+                type="text"
+                id="name"
+                name="UserName"
+                placeholder="Enter Your Name"
+                size="30px "
+                style="background-color: rgb(212, 220, 190)"
+                required
+              /><br /><br />
+            </div>
+            <div class="cont">
+              <label for="email">Email:</label><br />
+              <input
+                type="text"
+                id="email"
+                placeholder="Enter Your Email"
+                style="background-color: rgb(212, 220, 190)"
+                required
+              /><br /><br />
+            </div>
+            <div class="cont">
+              <label for="number">Contact Number</label><br />
+              <input
+                type="tel"
+                id="number"
+                placeholder="Enter Contact no."
+                style="background-color: rgb(212, 220, 190)"
+                required
+              /><br /><br />
+            </div>
+            <div class="cont">
+              <label for="date">Date for Appointment:</label><br />
+              <input
+                type="date"
+                id="date"
+                style="background-color: rgb(212, 220, 190)"
+                required
+              />
+              <label for="time">Time</label>
+              <input
+                type="time"
+                id="time"
+                style="background-color: rgb(212, 220, 190)"
+                required
+              /><br /><br />
+  </div>
+            <div>
+              <label for="submit"></label>
+              <input
+                type="submit"
+                id="submit"
+                value="SUBMIT"
+                style="background-color: Green"
+              />
+            </div>
+          </form>
+        </section>
+    </main>
+    
+    <script src="main.js"></script>
+  </body>
+</html>
