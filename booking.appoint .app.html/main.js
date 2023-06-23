@@ -1,21 +1,31 @@
 function saveToLocalStorage(event){
     event.preventDefault();
 
-    let name=document.getElementById('name').value;
-    let email=document.getElementById('email').value;
-    let number=document.getElementById('number').value;
-    let date=document.getElementById('date').value;
-    let time=document.getElementById('time').value;
+    const name=event.target.name.value;
+    const email=event.target.email.value;
+    const number=event.target.number.value;
+    const date=event.target.date.value;
+    const time=event.target.time.value;
+   
+    // localStorage.setItem('name',name);
+    // localStorage.setItem('email',email);
+    // localStorage.setItem('number',number);
+    // localStorage.setItem('date',date);
+    // localStorage.setItem('time',time);
 
-    localStorage.setItem('Name',name);
-    localStorage.setItem('Email',email);
-    localStorage.setItem('Contact Number',number);
-    localStorage.setItem('Date for Appointment',date);
-    localStorage.setItem('Time',time);
-
-
+   let obj ={
+       name,
+       email,
+       number,
+      date,
+      time,
 }
-
+    localStorage.setItem('userdetails' , JSON.stringify(obj))
+}
+    // const obj_strngify = JSON.stringify(obj)
+    // console.log(obj.stringify);
+    // localStorage.setItem(obj.email, obj_strngify);
+    // showUserOnScreen(obj);
 
 
 
@@ -32,32 +42,6 @@ function saveToLocalStorage(event){
 
 //console.log(document.cookie)
 
-// ELEMENT SELECTORS
 
-// Single Element Selectors
-//console.log(document.getElementById('my-form'));
-//console.log(document.querySelector('h1'));
-// Multiple Element Selectors
-//console.log(document.querySelectorAll('.item'));
-//console.log(document.getElementsByTagName('li'));
-//console.log(document.getElementsByClassName('item'));
-
-//const items = document.querySelectorAll('.item');
-//items.forEach((item) => console.log(item));
-
-//const form = document.querySelector('#saveToLocalStorage(event)');
-
-//const nameInput = document.querySelector('#name')
-//const emailInput = document.querySelector('#email');
-//const number=document.querySelector('#Contact Number');
-//const date=document.querySelector('#Date for Appointment')
-//const Time=document.querySelector('#time')
-
-//storing data
-//const name=localStorage.setitem(`${nameInput}`);
-//const email= localStorage.setItem(`${emailInput}`);
-//const Number=localStorage.setItem(`${numberInput}`);
-//const Date=localStorage.setItem(`${dateInput}`);
-//const time=localStorage.setItem(`${timeInput}`);
  
  
