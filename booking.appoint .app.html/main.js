@@ -19,15 +19,21 @@ function saveToLocalStorage(event){
        number,
       date,
       time,
-}
-    localStorage.setItem('userdetails' , JSON.stringify(obj))
-}
-    // const obj_strngify = JSON.stringify(obj)
-    // console.log(obj.stringify);
-    // localStorage.setItem(obj.email, obj_strngify);
-    // showUserOnScreen(obj);
+   }
 
+    //localStorage.setItem('userdetails' , JSON.stringify(obj))
+    const obj_strngify = JSON.stringify(obj)
+     console.log(obj.stringify);
+    localStorage.setItem(obj.email, obj_strngify);
+     showUserOnScreen(obj);
+}
 
+function showUserOnScreen(obj){
+    const parentEle = document.getElementById('listofusers');
+    const childEle=document.createElement('li');
+    childEle.textContent = obj.name + '-' + obj.email + '-' + obj.number + '-' + obj.date + '-' + obj.time;
+    parentEle.appendChild(childEle);
+}
 
 
 //localStorage.setItem('name','appu')
