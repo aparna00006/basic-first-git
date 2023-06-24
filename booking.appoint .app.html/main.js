@@ -32,9 +32,41 @@ function showUserOnScreen(obj){
     const parentEle = document.getElementById('listofusers');
     const childEle=document.createElement('li');
     childEle.textContent = obj.name + '-' + obj.email + '-' + obj.number + '-' + obj.date + '-' + obj.time;
-    parentEle.appendChild(childEle);
-}
+    //parentEle.appendChild(childEle);
 
+const deleteButton = document.createElement('input');
+deleteButton.type = 'button';
+deleteButton.value = 'delete';
+deleteButton.onclick=() => {
+    localStorage.removeItem(obj.email);
+    parentEle.removeChild(childEle);
+    document.getElementById('name').value = obj.name;
+    document.getElementById('email').value = obj.email;
+    document.getElementById('number').value = obj.number;
+    document.getElementById('date').value = obj.date;
+    document.getElementById('time').value = obj.time;
+}
+ //childEle.appendChild(editButton);
+ childEle.appendChild(deleteButton);
+ parentEle.appendChild(childEle);
+
+}
+// const editButton = document.createElement('input');
+// editButton.type = 'button';
+// editButton.value = 'Edit';
+// editButton.onclick=() => {
+//     localStorage.removeItem(obj.email);
+//     parentEle.removeChild(childEle);
+//     document.getElementById('name').value = obj.name;
+//     document.getElementById('email').value = obj.email;
+//     document.getElementById('number').value = obj.number;
+//     document.getElementById('date').value = obj.date;
+//     document.getElementById('time').value = obj.time;
+// }
+//  childEle.appendChild(editButton);
+//  childEle.appendChild(deleteButton);
+//  parentEle.appendChild(childEle);
+// }
 
 //localStorage.setItem('name','appu')
 //localStorage.removeItem('name')
