@@ -40,33 +40,24 @@ deleteButton.value = 'delete';
 deleteButton.onclick=() => {
     localStorage.removeItem(obj.email);
     parentEle.removeChild(childEle);
+}
+
+const editButton = document.createElement('input');
+editButton.type = 'button';
+editButton.value = 'Edit';
+editButton.onclick=() => {
+    localStorage.removeItem(obj.email);
+    parentEle.removeChild(childEle);
     document.getElementById('name').value = obj.name;
     document.getElementById('email').value = obj.email;
     document.getElementById('number').value = obj.number;
     document.getElementById('date').value = obj.date;
     document.getElementById('time').value = obj.time;
 }
- //childEle.appendChild(editButton);
+ childEle.appendChild(editButton);
  childEle.appendChild(deleteButton);
  parentEle.appendChild(childEle);
-
 }
-// const editButton = document.createElement('input');
-// editButton.type = 'button';
-// editButton.value = 'Edit';
-// editButton.onclick=() => {
-//     localStorage.removeItem(obj.email);
-//     parentEle.removeChild(childEle);
-//     document.getElementById('name').value = obj.name;
-//     document.getElementById('email').value = obj.email;
-//     document.getElementById('number').value = obj.number;
-//     document.getElementById('date').value = obj.date;
-//     document.getElementById('time').value = obj.time;
-// }
-//  childEle.appendChild(editButton);
-//  childEle.appendChild(deleteButton);
-//  parentEle.appendChild(childEle);
-// }
 
 //localStorage.setItem('name','appu')
 //localStorage.removeItem('name')
