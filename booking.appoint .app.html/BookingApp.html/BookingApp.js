@@ -20,7 +20,7 @@ function saveToLocalStorage(event){
     date,
     time,
  }
- axios.post("https://crudcrud.com/api/91b843c30de149729c2ec4aaef79ae20/appointmentData", obj)
+ axios.post("https://crudcrud.com/api/c42c9287eb5641a3b5d25dc9ad1fba98/appointmentData", obj)
  .then((response)=>{
   showUserOnScreen(response.data);
  })
@@ -35,9 +35,9 @@ function saveToLocalStorage(event){
   //  showUserOnScreen(obj);
 }
  window.addEventListener("DOMContentLoaded", () =>{
-  axios.get("https://crudcrud.com/api/91b843c30de149729c2ec4aaef79ae20/appointmentData")
+  axios.get("https://crudcrud.com/api/c42c9287eb5641a3b5d25dc9ad1fba98/appointmentData")
   .then((response)=>{
-    console.log(response);
+    //console.log(response);
     for(var i=0; i < response.data.length;i++){
       showUserOnScreen(response.data[i]);
     }
@@ -57,9 +57,14 @@ const deleteButton = document.createElement('input');
 deleteButton.type = 'button';
 deleteButton.value = 'delete';
 deleteButton.onclick=() => {
-  localStorage.removeItem(obj.email);
+  //localStorage.removeItem(obj.email);
+  axios.delete(`https://crudcrud.com/api/c42c9287eb5641a3b5d25dc9ad1fba98/appointmentData/${obj._id}`)
+  .then((res)=>{
+    console.log(res);
+  })
+  .catch((err)=>console.log(err));
   parentEle.removeChild(childEle);
-}
+};
 
 const editButton = document.createElement('input');
 editButton.type = 'button';
